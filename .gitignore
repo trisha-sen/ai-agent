@@ -8,11 +8,6 @@ __pycache__/
 venv/
 env/
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
-
 # Testing / coverage
 .pytest_cache/
 .coverage
