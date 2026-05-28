@@ -8,7 +8,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY data/abstracts.csv data/abstracts.csv
 COPY data/topic_labels.json data/topic_labels.json
 COPY main.py .
+COPY load_data.py .
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
 
 EXPOSE 8000
 
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

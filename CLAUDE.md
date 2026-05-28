@@ -8,13 +8,27 @@ as ground truth (Precision@10 per topic), comparing TF-IDF vs embedding-based re
 ## Data
 
 - **data/abstracts.csv** — 21K rows. Columns:
-  - `doi` — unique paper identifier
-  - `title` — paper title
-  - `abstract` — full abstract text
-  - `journal` — publication journal
-  - `year` — publication year
-  - `topics` — top 3 NMF topic IDs as a Python list, e.g. `[4, 11, 2]`
-  - `all_topic_prop` — weight vector across all 20 NMF topics, e.g. `[0.42, 0.01, 0.0, ...]`
+  - `doi` - unique paper identifier
+  - `title` - paper title
+  - `abstract` - full abstract text
+  - `author_keywords` - keywords provided by author
+  - `authors` - paper authors
+  - `cited_by` - number of citations the paper received
+  - `journal` - publication journal
+  - `year` - publication year
+  - `topics` - top 3 NMF topic IDs as a Python list, e.g. `[4, 11, 2]`
+  - `all_topic_prop` - weight vector across all 20 NMF topics, e.g. `[0.42, 0.01, 0.0, ...]`
+
+       'DOI': 'doi',
+     'Title': 'title',
+     'Abstract': 'abstract',
+     'Author Keywords': 'author keywords',
+     'Authors': 'authors',
+     'Cited by': 'cited by',
+     'Source title': 'journal',
+     'Year': 'year',
+     'topics': 'topics',
+     'all_topic_prop': 'all_topic_prop'
 
 - **Parsing** — both list columns are stored as stringified Python lists.
   Always parse on load:
